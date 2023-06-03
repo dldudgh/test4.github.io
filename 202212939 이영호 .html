@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>이영호 자기소개</title>
+    <style>
+        .toggle-wrapper {
+            display: none;
+        }
+
+        .toggle-image {
+            display: none;
+            width: 100px;
+            height: 300px;
+            margin-top: 20px;
+        }
+
+        .emphasis {
+            font-weight: bold;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #imageContainer {
+            display: flex;
+            align-items: center;
+        }
+
+        #textContainer {
+            margin-left: 260px;
+            margin-top: -20px;
+        }
+
+        .not-found {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 24px;
+            color: red;
+            display: none;
+        }
+
+        h2 em {
+            position: relative;
+            top: 20px;
+            left: 300px;
+        }
+
+        #onButton {
+            position: relative;
+            top: -40px;
+            left: 1300px;
+        }
+
+        #offButton {
+            position: relative;
+            top: -40px;
+            left: 1310px;
+        }
+
+        #toggleImage {
+            position: relative;
+            top: 10px;
+            left: 230px;
+            width: 200px;
+            height: 200px;
+        }
+
+        /* 반응형 스타일 */
+        @media (max-width: 768px) {
+            #textContainer {
+                margin-left: 0;
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            #onButton,
+            #offButton {
+                position: static;
+                display: block;
+                margin: 10px auto;
+            }
+
+            #toggleImage {
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2><em>LEE Young ho</em></h2>
+
+    <!-- 토글 스위치 -->
+    <div class="toggle-wrapper">
+        <input type="checkbox" class="toggle-checkbox" id="toggle" onchange="toggleSwitch()">
+        <label class="toggle-label" for="toggle"></label>
+    </div>
+
+    <!-- 토글 버튼 -->
+    <button id="onButton" onclick="toggleState('on')">Home</button>
+    <button id="offButton" onclick="toggleState('off')">public</button>
+
+    <!-- 이미지와 텍스트를 감싸는 컨테이너 -->
+    <div id="imageContainer">
+        <img src="data:image/jpeg;base64,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" alt="Toggle Image" class="toggle-image" id="toggleImage">
+        
+        <div id="textContainer">
+            <span class="emphasis hidden">
+                <h1>자기소개</h1>
+                <p>나는 대한민국 강원대에서 컴퓨터 공학 공부하고있는 이영호라고 한다.</p>
+                
+            </span>
+            <span class="emphasis hidden">
+                <h3>other</h3>
+                <h2>2022</h2>
+            </span>
+        </div>
+    </div>
+
+    <!-- 404 Not Found 페이지 -->
+    <div class="not-found">
+        <h2>404 Not Found</h2>
+        <p>페이지를 찾을 수 없습니다.</p>
+    </div>
+
+    <script>
+        const toggleWrapper = document.querySelector('.toggle-wrapper');
+        const toggle = document.getElementById('toggle');
+        let isOn = false;
+        const toggleImage = document.getElementById('toggleImage');
+        const statusTexts = document.querySelectorAll('#textContainer span');
+        const notFoundPage = document.querySelector('.not-found');
+
+        function toggleSwitch() {
+            if (toggle.checked) {
+                toggleImage.style.display = 'block';
+            } else {
+                toggleImage.style.display = 'none';
+            }
+            isOn = toggle.checked;
+            updateText();
+        }
+
+        function toggleState(state) {
+            if ((state === 'on' && !isOn) || (state === 'off' && isOn)) {
+                toggle.checked = !toggle.checked;
+                toggleSwitch();
+            }
+        }
+
+        function updateText() {
+            if (isOn) {
+                statusTexts[0].classList.remove('hidden');
+                statusTexts[1].classList.add('hidden');
+                notFoundPage.style.display = 'none';
+            } else {
+                statusTexts[0].classList.add('hidden');
+                statusTexts[1].classList.remove('hidden');
+                notFoundPage.style.display = 'none';
+            }
+        }
+
+        // URL 체크 후 홈으로 이동
+        if (window.location.pathname === '/spa') { 
+            toggle.checked = true;
+            toggleSwitch();
+        }
+    </script>
+</body>
+</html>
